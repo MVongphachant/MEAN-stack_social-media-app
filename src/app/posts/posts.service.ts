@@ -76,7 +76,13 @@ export class PostsService {
       postData.append('content', content);
       postData.append('image', image, title);
     } else {
-      postData = { id, title, content, imagePath: image, creator: null };
+      postData = {
+        id,
+        title,
+        content,
+        imagePath: image,
+        creator: null
+      };
     }
     this.http.put(BACKEND_URL + id, postData)
       .subscribe(response => {
